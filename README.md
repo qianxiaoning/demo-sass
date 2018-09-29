@@ -5,7 +5,7 @@
 ```
 新建.scss文件
 监听多文件，scss文件夹下的scss输出到css文件夹 并按整理格式排版
-sass --watch scss/:css/ --style compact
+sass --watch sass/:css/ --style compact
 ```
 - compass创建sass项目
 ```
