@@ -8,7 +8,51 @@
 sass --watch scss/:css/ --style compact
 ```
 - compass创建sass项目
-
+```
+compass create compassSass
+compass watch
+在config.rb修改入口和输出路径 修改排版格式时，要重新开启watch生效
+```
+- 在vue中使用sass
+```
+1.安装sass依赖
+vue init webpack demo
+npm i sass-loader -D
+npm i node-sass -D //sass-loader依赖node-sass
+2.配置webpack
+webpack.base.conf.js中的
+module:{
+    rules:[
+        {
+            test:/\.scss$/, //匹配后缀名
+            loaders:['style','css','sass'] //指定loader
+        }
+    ]
+}
+3.style标签 <style lang="scss" scoped>
+然后照常npm run dev即可
+4.主要用语法
+$btn-bgColor:blue!default; //定义变量，后面要加分号（可加默认值，使其可修改）
+.page01{ //嵌套语法
+    .nav{
+        a{
+            color:#000;
+            &:hover{color:#fff;} //&代表父标签，定义hover时
+        }        
+    }
+    .container{
+        .blueBtn,.redBtn{font-size:16px;} //群组选择器
+    }
+    .footer{
+        background{ //属性嵌套
+            image:url('../..');
+            color:#fff;
+            repeat:no-repeat
+        }
+    }
+}
+```
+---
 ### 安装
 #### 安装ruby
 - window下安装ruby，勾选Add Ruby executables to your PATH
@@ -302,4 +346,8 @@ sass --watch input.scss:output.css
 
 监视整个文件夹：
 sass --watch app/sass:public/stylesheets
+```
+#### CSS转译成SASS sass-convert
+```
+$ sass-convert css/style.css style.scss
 ```
