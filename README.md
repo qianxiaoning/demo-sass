@@ -1,19 +1,18 @@
 ### 快速上手
-- 安装ruby 勾选Add Ruby executables to your PATH
-- 安装sass gem install sass
-- 纯净sass项目
+- 单独使用sass
 ```
+1.安装ruby 勾选Add Ruby executables to your PATH
+2.安装sass gem install sass
+一、纯净sass项目
 新建.scss文件
 监听多文件，scss文件夹下的scss输出到css文件夹 并按整理格式排版
 sass --watch sass/:css/ --style compact
-```
-- compass创建sass项目
-```
+二、compass创建sass项目
 compass create compassSass
 compass watch
 在config.rb修改入口和输出路径 修改排版格式时，要重新开启watch生效
 ```
-- 在vue中使用sass
+- 在vue中使用sass （不需要安装sass环境）
 ```
 1.安装sass依赖
 vue init webpack demo
